@@ -30,6 +30,32 @@ app.post('/login', (req, res) => {
   }
 });
 
+app.post('/sa', (req, res) => {
+  // Aquí puedes agregar lógica para verificar la autenticación antes de guardar los datos
+  // Por ejemplo, podrías verificar si el usuario tiene una sesión válida
+  // Antes de permitir guardar datos
+
+  // Para simplificar, solo reenviamos la solicitud al servicio de datos
+  const { data } = req.body;
+
+  // Envia la solicitud al servicio de datos
+  fetch('http://localhost:4000/save', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({ data }),
+  })
+  .then(response => response.json())
+  .then(result => {
+    res.json(result);
+  })
+  .catch(error => {
+    console.error('Error al guardar datos:', error);
+    res.status(500).json({ success: false, message: 'Error al guardar datos' });
+  });
+});
+
 app.listen(port, () => {
   console.log(`Server running at http://localhost:${port}`);
 });

@@ -8,13 +8,20 @@ node server.js
 
 base de datos
 ----------------------------------------
-1.- cd arquitectura/js
+1.- cd js
 2.- node datos.js
 ---------------------------------------
 
 
 Pago
 ---------------------------------------
-1.- cd arquitectura/js
+1.- cd js
 2.- node pago.js
 ---------------------------------------
+
+
+Datos de usuario para ingresar
+---------------------------------------
+User: ADMIN
+Password: admin
+--------------------------------------

@@ -103,3 +103,41 @@ function mostrarDatos(datos) {
     listaDatos.appendChild(listItem);
   });
 }
+
+
+async function procesarPago() {
+  const consultaId = document.getElementById('consultaIdPago').value;
+  const monto = document.getElementById('montoPago').value;
+  const tarjeta = document.getElementById('tarjeta').value;
+  const nombreTitular = document.getElementById('nombreTitular').value;
+  const fechaExpiracion = document.getElementById('fechaExpiracion').value;
+  const cvv = document.getElementById('cvv').value;
+
+  try {
+    const response = await fetch('http://localhost:5000/process-payment', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        consultaId,
+        monto,
+        tarjeta,
+        nombreTitular,
+        fechaExpiracion,
+        cvv,
+      }),
+    });
+
+    const data = await response.json();
+
+    if (response.ok) {
+      alert(data.message);
+      guardarDatos();
+    } else {
+      throw new Error(`Error al procesar el pago: ${data.message}`);
+    }
+  } catch (error) {
+    console.error('Error de red:', error.message);
+  }
+}

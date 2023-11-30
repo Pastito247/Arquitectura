@@ -1,0 +1,41 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Consultas y Pago</title>
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <script src="js/index.js"></script>
+</head>
+<body>
+    <div id="consulta-container">
+        <h2>Registro de Consulta</h2>
+        <form id="consulta-form">
+            <label for="rut">RUT:</label>
+            <input type="text" id="rut" name="rut" required>
+
+            <label for="nombreCompleto">Nombre Completo:</label>
+            <input type="text" id="nombreCompleto" name="nombreCompleto" required>
+
+
+            <button type="button" onclick="registrarConsulta()">Registrar Consulta</button>
+        </form>
+    </div>
+
+    <div id="pago-container">
+        <h2>Pago</h2>
+        <form id="pago-form">
+
+            <label for="consultaId">ID de Consulta:</label>
+            <input type="text" id="consultaId" name="consultaId" required>
+
+            <label for="monto">Monto:</label>
+            <input type="text" id="monto" name="monto" required>
+
+
+            <button type="button" onclick="procesarPago()">Procesar Pago</button>
+        </form>
+    </div>
+</body>
+</html>

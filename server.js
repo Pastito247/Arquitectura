@@ -55,6 +55,37 @@ app.post('/sa', (req, res) => {
     res.status(500).json({ success: false, message: 'Error al guardar datos' });
   });
 });
+app.post('/process-payment', async (req, res) => {
+  const { consultaId, monto, tarjeta, nombreTitular, fechaExpiracion, cvv } = req.body;
+
+  try {
+    const response = await fetch('http://localhost:5000/process-payment', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        consultaId,
+        monto,
+        tarjeta,
+        nombreTitular,
+        fechaExpiracion,
+        cvv,
+      }),
+    });
+
+    const data = await response.json();
+
+    if (response.ok) {
+      alert(data.message);
+      // Puedes hacer algo adicional después de procesar el pago exitosamente, si es necesario
+    } else {
+      throw new Error(`Error al procesar el pago: ${data.message}`);
+    }
+  } catch (error) {
+    console.error('Error de red:', error.message);
+  }
+});
 
 app.listen(port, () => {
   console.log(`Server running at http://localhost:${port}`);

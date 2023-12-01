@@ -89,7 +89,10 @@ async function obtenerDatos() {
     console.error('Error de red:', error.message);
   }
 }
-
+window.onload = function () {
+  // Supongamos que tienes un array de datos para mostrar
+  obtenerDatos();
+};
 function mostrarDatos(datos) {
   const listaDatos = document.getElementById('lista-datos');
 
@@ -103,7 +106,6 @@ function mostrarDatos(datos) {
     listaDatos.appendChild(listItem);
   });
 }
-
 
 async function procesarPago() {
   const consultaId = document.getElementById('consultaIdPago').value;
@@ -141,3 +143,4 @@ async function procesarPago() {
     console.error('Error de red:', error.message);
   }
 }
+

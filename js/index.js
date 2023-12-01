@@ -136,6 +136,7 @@ async function procesarPago() {
     if (response.ok) {
       alert(data.message);
       guardarDatos();
+      window.location.href = 'lobby.html';
     } else {
       throw new Error(`Error al procesar el pago: ${data.message}`);
     }

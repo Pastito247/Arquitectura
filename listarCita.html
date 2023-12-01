@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listado de Citas</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/index.js"></script>
+</head>
+<body>
+    <div id="filtro-container">
+        <label for="fechaFiltro">Filtrar por Fecha:</label>
+        <input type="date" id="fechaFiltro" name="fechaFiltro">
+        <button onclick="filtrarPorFecha()">Filtrar</button>
+    </div>
+
+    <div id="citas-container" class="card-container">
+       
+    </div>
+
+    <script src="js/datos.js"></script>
+    <script src="js/listado-citas.js"></script>
+</body>
+</html>

@@ -1,40 +1,57 @@
 body {
-    font-family: Arial, sans-serif;
-    background: linear-gradient(to right, rgb(18, 116, 134), #5c5c97);;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(to right, rgb(18, 116, 134), #5c5c97);
+  color: #fff;
+  margin: 0;
 }
 
 header {
-    background: #007BFF;
-    color: #fff;
-    padding: 10px;
-    text-align: center;
+  background: #0056b3; 
+  color: #fff;
+  padding: 15px;
+  text-align: center;
 }
 
 nav {
-    background: #333;
-    color: #fff;
-    padding: 10px;
-    text-align: center;
+  background: #333;
+  color: #fff;
+  padding: 10px;
+  text-align: center;
 }
 
 nav ul {
-    list-style: none;
-    padding: 0;
+  list-style: none;
+  padding: 0;
 }
 
+nav a[href="index.html"] {
+  background-color: #dc3545; 
+  color: #fff;
+  padding: 10px 15px;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+nav a[href="index.html"]:hover {
+  background-color: #bd2130; 
+}
 nav li {
-    display: inline;
-    margin-right: 10px;
+  display: inline;
+  margin-right: 10px;
 }
-a{
-    text-decoration: none;
-    color: #fcfcfc;
-}
-a:hover{
-    text-decoration: none;
-    color: #007BFF;
+nav a[href="crearCita.html"] {
+  background-color: #007BFF;
+  color: #fff;
+  padding: 10px 15px;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
 }
 
+nav a[href="crearCita.html"]:hover {
+  background-color: #0056b3;
+}
 
 .container {
     width: 80%;
@@ -55,9 +72,9 @@ a:hover{
     height: auto;
 }
 
-/* Estilo para el texto al lado de la imagen */
+
 .text-container {
-    overflow: hidden; /* Evita que el texto se desborde */
+    overflow: hidden; 
 }
 .cookie-warning {
     background: linear-gradient(0deg, #9005bd 0%, #bc28d2 100%);
@@ -69,7 +86,6 @@ a:hover{
     flex-direction: column;
     padding: 1.5rem;
     border-radius: 0.6rem;
-  /*  position: fixed; */
     left: 2.4rem;
     right: 2.4rem;
     bottom: 2.4rem;

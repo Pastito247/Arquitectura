@@ -22,7 +22,7 @@ async function validateLogin() {
         return;
       }
   
-      window.location.href = 'crearCita.html';
+      window.location.href = 'lobby.html';
       alert(data.message);
     } catch (error) {
       console.error('Error de red:', error.message);

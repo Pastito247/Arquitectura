@@ -2,12 +2,12 @@
   // Tu código aquí
 function validateLogin() {
     const username = document.getElementById('username').value;
-  
-    if(username === 'Secretaria'){
+    const pass = document.getElementById('password').value;
+    if(username === 'Secretaria' && pass === '123'){
       window.location.href = 'lobby.html';
-    }else if(username === 'Medico'){
+    }else if(username === 'Medico' && pass === '1234'){
       window.location.href = 'medico.html';
-    }else if (username === 'Paciente'){
+    }else if (username === 'Paciente' && pass === '12345'){
       window.location.href = 'paciente.html';
     }else{
       openErrorModal();

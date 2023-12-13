@@ -1,32 +1,18 @@
 
   // Tu código aquí
-async function validateLogin() {
+function validateLogin() {
     const username = document.getElementById('username').value;
-    const password = document.getElementById('password').value;
   
-    try {
-      const response = await fetch('/login', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ username, password }),
-      });
-  
-      const data = await response.json();
-  
-      if (!response.ok) {
-        // Si la respuesta no es "ok", muestra el modal de error
-        document.getElementById('error-message').innerText = 'Error en la autenticación';
-        openErrorModal();
-        return;
-      }
-  
+    if(username === 'Secretaria'){
       window.location.href = 'lobby.html';
-      alert(data.message);
-    } catch (error) {
-      console.error('Error de red:', error.message);
+    }else if(username === 'Medico'){
+      window.location.href = 'medico.html';
+    }else if (username === 'Paciente'){
+      window.location.href = 'paciente.html';
+    }else{
+      openErrorModal();
     }
+
   }
 
 
